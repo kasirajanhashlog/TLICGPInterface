@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Sep, 2012 9:30:03 AM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.OrWgUserAccess" table="or_wg_user_access" schema="public">
+        <composite-id name="id" class="com.claystone.db.OrWgUserAccessId">
+            <key-property name="userId" type="int">
+                <column name="user_id" />
+            </key-property>
+            <key-property name="workgroupId" type="int">
+                <column name="workgroup_id" />
+            </key-property>
+        </composite-id>
+        <property name="groupOwnerId" type="int">
+            <column name="group_owner_id" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="int">
+            <column name="last_modified_user" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

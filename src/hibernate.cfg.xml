@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.password">Hashlogdbadm@2021</property>
+		<!-- <property name="hibernate.connection.url">jdbc:postgresql://34.93.251.117:5432/vTrack-restore1</property> -->
+		<!-- <property name="hibernate.connection.url">jdbc:postgresql://34.93.251.117:5432/vTrack</property> -->
+ 		<property name="hibernate.connection.url">jdbc:postgresql://10.9.112.3:5432/vTrack</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> -->
+		<!-- SPATIAL SQL dialect -->
+		<property name="dialect">org.hibernatespatial.postgis.PostgisDialect</property>
+
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.timeout">100</property>
+		<property name="hibernate.c3p0.max_size">10</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<!-- <property name="hibernate.c3p0.idle_test_period">300</property> -->
+		<!-- <property name="hibernate.c3p0.testConnectionOnCheckin">true</property> 
+			<property name="hibernate.c3p0.testConnectionOnCheckout">true</property> 
+			<property name="hibernate.c3p0.debugUnreturnedConnectionStackTraces">true</property> 
+			<property name="hibernate.c3p0.unreturnedConnectionTimeout">180</property> -->
+
+		<mapping resource="com/claystone/db/Gpsdata.hbm.xml" />
+		<mapping resource="com/claystone/db/MobileUnit.hbm.xml" />
+		<mapping resource="com/claystone/db/Vehicle.hbm.xml" />
+		<mapping resource="com/claystone/db/VehicleMobileUnit.hbm.xml" />
+		<mapping resource="com/claystone/db/OrWorkgroup.hbm.xml" />
+		<mapping resource="com/claystone/db/OrWorkgroupVehicle.hbm.xml" />
+		<mapping resource="com/claystone/db/DataProvider.hbm.xml" />
+		<mapping resource="com/claystone/db/GpsApiPolling.hbm.xml" />
+		<mapping resource="com/claystone/db/CanbusVehicleParams.hbm.xml" />
+		<mapping resource="com/claystone/db/CanbusGpsdata.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 28, 2020 4:45:31 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.claystone.db.DeviceType" table="device_type" schema="public">
+        <composite-id name="id" class="com.claystone.db.DeviceTypeId">
+            <key-property name="hardwareId" type="int">
+                <column name="hardware_id" />
+            </key-property>
+            <key-property name="hardwareName" type="string">
+                <column name="hardware_name" />
+            </key-property>
+        </composite-id>
+        <property name="recordStatus" type="int">
+            <column name="record_status" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="int">
+            <column name="last_modified_user" not-null="true" />
+        </property>
+        <property name="lasModifiedTime" type="timestamp">
+            <column name="las_modified_time" length="29" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

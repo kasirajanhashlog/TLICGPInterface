@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 28, 2020 10:27:15 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.claystone.db.Company" table="company" schema="public">
+        <comment>Tracking company details</comment>
+        <id name="companyId" type="int">
+            <column name="company_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="companyCodeName" type="string">
+            <column name="company_code_name" not-null="true" />
+        </property>
+        <property name="companyName" type="string">
+            <column name="company_name" not-null="true" />
+        </property>
+        <property name="companyNameNative" type="string">
+            <column name="company_name_native" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="companyTypeId" type="int">
+            <column name="company_type_id" not-null="true" />
+        </property>
+        <property name="companyAccessLevel" type="short">
+            <column name="company_access_level" not-null="true" />
+        </property>
+        <property name="companyLogonUrl" type="string">
+            <column name="company_logon_url" not-null="true" />
+        </property>
+        <property name="companyLogoffUrl" type="string">
+            <column name="company_logoff_url" not-null="true" />
+        </property>
+        <property name="companyAddress" type="string">
+            <column name="company_address" />
+        </property>
+        <property name="companyLogo" type="string">
+            <column name="company_logo" />
+        </property>
+        <property name="companyUrl" type="string">
+            <column name="company_url" />
+        </property>
+        <property name="companyType" type="int">
+            <column name="company_type" not-null="true" />
+        </property>
+        <property name="companyCode" type="string">
+            <column name="company_code" />
+        </property>
+        <property name="groupOwnerId" type="string">
+            <column name="group_owner_id" />
+        </property>
+        <property name="contactPerson" type="string">
+            <column name="contact_person" />
+        </property>
+        <property name="contactNumber1" type="string">
+            <column name="contact_number_1" />
+        </property>
+        <property name="contactNumber2" type="string">
+            <column name="contact_number_2" />
+        </property>
+        <property name="gpsDeviceType" type="string">
+            <column name="gps_device_type" />
+        </property>
+        <property name="driverAppFeature" type="string">
+            <column name="driver_app_feature" />
+        </property>
+        <property name="groupCompany" type="string">
+            <column name="group_company" />
+        </property>
+        <property name="excludeSubGroups" type="string">
+            <column name="exclude_sub_groups" />
+        </property>
+         <property name="excludeGroupCompany" type="string">
+            <column name="exclude_group_company" />
+        </property>
+    </class>
+</hibernate-mapping>

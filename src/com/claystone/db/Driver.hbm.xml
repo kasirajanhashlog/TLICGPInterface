@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 Jun, 2010 12:56:16 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.Driver" table="driver" schema="public">
+        <comment>Drivers' personal information</comment>
+        <id name="driverId" type="int">
+            <column name="driver_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="companyId" type="int">
+            <column name="company_id" not-null="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" length="20" not-null="true" />
+        </property>
+        <property name="middleName" type="string">
+            <column name="middle_name" length="20" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="20" />
+        </property>
+        <property name="licenseNumber" type="string">
+            <column name="license_number" length="20" not-null="true" />
+        </property>
+        <property name="phoneNumber" type="string">
+            <column name="phone_number" length="20" />
+        </property>
+        <property name="mobileNumber" type="string">
+            <column name="mobile_number" length="20" />
+        </property>
+        <property name="idCardNumber" type="string">
+            <column name="id_card_number" length="20" />
+        </property>
+        <property name="driverPhotoUrl" type="string">
+            <column name="driver_photo_url" length="20" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" />
+        </property>
+        <property name="recordStatus" type="short">
+            <column name="record_status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

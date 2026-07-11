@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Feb, 2011 11:50:49 AM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.server.db.CompanyStationNew" table="company_station_new" schema="public">
+        <id name="stationId" type="int">
+            <column name="station_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="companyId" type="int">
+            <column name="company_id" not-null="true" />
+        </property>
+        <property name="stationName" type="string">
+            <column name="station_name" not-null="true" />
+        </property>
+        <property name="stationGeom" type="org.hibernatespatial.GeometryUserType">
+            <column name="station_geom" />
+        </property>
+        <property name="stationType" type="string">
+            <column name="station_type" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="int">
+            <column name="last_modified_user" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="recordStatus" type="int">
+            <column name="record_status" not-null="true" />
+        </property>
+        <property name="stationCode" type="string">
+            <column name="station_code" length="10" />
+        </property>
+        <property name="hasChild" type="java.lang.Boolean">
+            <column name="has_child" />
+        </property>
+          <property name="regionName" type="string">
+            <column name="region_name" />
+        </property>
+        <property name="stationIdentifier" type="string">
+            <column name="station_identifier" />
+        </property>
+         <property name="stationAddress" type="string">
+            <column name="station_address" />
+        </property>
+         <property name="contactPerson" type="string">
+            <column name="contact_person" />
+        </property>
+         <property name="contactNumber" type="string">
+            <column name="contact_number" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 24, 2007 1:46:19 PM by Hibernate Tools 3.1.0.beta5 -->
+<hibernate-mapping>
+    <class name="com.claystone.db.MobileUnit" table="mobile_unit" schema="public">
+        <comment>Details of mobile unit</comment>
+        <composite-id name="id" class="com.claystone.db.MobileUnitId">
+            <key-property name="mobileunitid" type="string">
+                <column name="mobileunitid" length="20" />
+            </key-property>
+            <key-property name="companyId" type="int">
+                <column name="company_id" />
+            </key-property>
+        </composite-id>
+        <property name="mobileUnitDescEn" type="string">
+            <column name="mobile_unit_desc_en" length="30" />
+        </property>
+        <property name="mobileUnitDescNative" type="string">
+            <column name="mobile_unit_desc_native" length="60" />
+        </property>
+        <property name="hardwareId" type="string">
+            <column name="hardware_id" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="recordStatus" type="short">
+            <column name="record_status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-Sep-2010 16:06:01 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.CanbusVehicleParams" table="canbus_vehicle_params" schema="public">
+        <composite-id name="id" class="com.claystone.db.CanbusVehicleParamsId">
+            <key-property name="companyId" type="int">
+                <column name="company_id" />
+            </key-property>
+            <key-property name="vehicleId" type="int">
+                <column name="vehicle_id" />
+            </key-property>
+            <key-property name="ztVarId" type="string">
+                <column name="zt_var_id" />
+            </key-property>
+            <key-property name="canVarId" type="string">
+                <column name="can_var_id" />
+            </key-property>
+        </composite-id>
+        <property name="canVarStatus" type="boolean">
+            <column name="can_var_status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

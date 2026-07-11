@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13 Aug, 2012 3:52:10 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.Imeidata" table="imeidata" schema="public">
+        <composite-id name="id" class="com.claystone.db.ImeidataId">
+            <key-property name="imei" type="string">
+                <column name="imei" />
+            </key-property>
+            <key-property name="mobileunitid" type="string">
+                <column name="mobileunitid" />
+            </key-property>
+            <key-property name="fromdate" type="timestamp">
+                <column name="fromdate" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="doorFlag" type="java.lang.Boolean">
+            <column name="door_flag" />
+        </property>
+         <property name="sensor" type="java.lang.Integer">
+            <column name="sensor" />
+        </property>
+    </class>
+</hibernate-mapping>

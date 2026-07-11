@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-Sep-2010 16:06:01 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.CanbusGpsdata" table="canbus_gpsdata" schema="public">
+        <composite-id name="id" class="com.claystone.db.CanbusGpsdataId">
+            <key-property name="mobileunitid" type="string">
+                <column name="mobileunitid" />
+            </key-property>
+            <key-property name="gpsdate" type="timestamp">
+                <column name="gpsdate" length="29" />
+            </key-property>
+            <key-property name="gprsdate" type="timestamp">
+                <column name="gprsdate" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="output1" type="string">
+            <column name="output_1" />
+        </property>
+        <property name="output2" type="string">
+            <column name="output_2" />
+        </property>
+        <property name="output3" type="string">
+            <column name="output_3" />
+        </property>
+        <property name="output4" type="string">
+            <column name="output_4" />
+        </property>
+        <property name="output5" type="string">
+            <column name="output_5" />
+        </property>
+        <property name="output6" type="string">
+            <column name="output_6" />
+        </property>
+        <property name="output7" type="string">
+            <column name="output_7" />
+        </property>
+        <property name="output8" type="string">
+            <column name="output_8" />
+        </property>
+        <property name="output9" type="string">
+            <column name="output_9" />
+        </property>
+        <property name="output10" type="string">
+            <column name="output_10" />
+        </property>
+        <property name="output11" type="string">
+            <column name="output_11" />
+        </property>
+        <property name="output12" type="string">
+            <column name="output_12" />
+        </property>
+        <property name="output13" type="string">
+            <column name="output_13" />
+        </property>
+        <property name="output14" type="string">
+            <column name="output_14" />
+        </property>
+        <property name="output15" type="string">
+            <column name="output_15" />
+        </property>
+        <property name="output16" type="string">
+            <column name="output_16" />
+        </property>
+        <property name="output17" type="string">
+            <column name="output_17" />
+        </property>
+        <property name="output18" type="string">
+            <column name="output_18" />
+        </property>
+        <property name="output19" type="string">
+            <column name="output_19" />
+        </property>
+        <property name="output20" type="string">
+            <column name="output_20" />
+        </property>
+        <property name="output21" type="string">
+            <column name="output_21" />
+        </property>
+        <property name="output22" type="string">
+            <column name="output_22" />
+        </property>
+        <property name="output23" type="string">
+            <column name="output_23" />
+        </property>
+        <property name="output24" type="string">
+            <column name="output_24" />
+        </property>
+        <property name="output25" type="string">
+            <column name="output_25" />
+        </property>
+        <property name="output26" type="string">
+            <column name="output_26" />
+        </property>
+        <property name="output27" type="string">
+            <column name="output_27" />
+        </property>
+        <property name="output28" type="string">
+            <column name="output_28" />
+        </property>
+        <property name="output29" type="string">
+            <column name="output_29" />
+        </property>
+        <property name="output30" type="string">
+            <column name="output_30" />
+        </property>
+        <property name="output31" type="string">
+            <column name="output_31" />
+        </property>
+        <property name="output32" type="string">
+            <column name="output_32" />
+        </property>
+        <property name="output33" type="string">
+            <column name="output_33" />
+        </property>
+        <property name="output34" type="string">
+            <column name="output_34" />
+        </property>
+        <property name="output35" type="string">
+            <column name="output_35" />
+        </property>
+        <property name="output36" type="string">
+            <column name="output_36" />
+        </property>
+        <property name="output37" type="string">
+            <column name="output_37" />
+        </property>
+        <property name="output38" type="string">
+            <column name="output_38" />
+        </property>
+        <property name="output39" type="string">
+            <column name="output_39" />
+        </property>
+        <property name="output40" type="string">
+            <column name="output_40" />
+        </property>
+        <property name="output41" type="string">
+            <column name="output_41" />
+        </property>
+        <property name="output42" type="string">
+            <column name="output_42" />
+        </property>
+        <property name="output43" type="string">
+            <column name="output_43" />
+        </property>
+        <property name="output44" type="string">
+            <column name="output_44" />
+        </property>
+        <property name="output45" type="string">
+            <column name="output_45" />
+        </property>
+        <property name="output46" type="string">
+            <column name="output_46" />
+        </property>
+        <property name="output47" type="string">
+            <column name="output_47" />
+        </property>
+        <property name="output48" type="string">
+            <column name="output_48" />
+        </property>
+        <property name="output49" type="string">
+            <column name="output_49" />
+        </property>
+        <property name="output50" type="string">
+            <column name="output_50" />
+        </property>
+        <property name="output51" type="string">
+            <column name="output_51" />
+        </property>
+        <property name="output52" type="string">
+            <column name="output_52" />
+        </property>
+        <property name="output53" type="string">
+            <column name="output_53" />
+        </property>
+        <property name="output54" type="string">
+            <column name="output_54" />
+        </property>
+        <property name="output55" type="string">
+            <column name="output_55" />
+        </property>
+        <property name="output56" type="string">
+            <column name="output_56" />
+        </property>
+        <property name="output57" type="string">
+            <column name="output_57" />
+        </property>
+        <property name="output58" type="string">
+            <column name="output_58" />
+        </property>
+        <property name="output59" type="string">
+            <column name="output_59" />
+        </property>
+        <property name="output60" type="string">
+            <column name="output_60" />
+        </property>
+        <property name="output61" type="string">
+            <column name="output_61" />
+        </property>
+        <property name="output62" type="string">
+            <column name="output_62" />
+        </property>
+        <property name="output63" type="string">
+            <column name="output_63" />
+        </property>
+        <property name="reserve" type="string">
+            <column name="reserve" />
+        </property>
+        <property name="processedFlag" type="boolean">
+            <column name="processed_flag" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

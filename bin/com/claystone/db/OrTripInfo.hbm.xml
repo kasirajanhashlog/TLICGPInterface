@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated May 14, 2019 10:32:37 AM by Hibernate Tools 5.3.6.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.claystone.db.OrTripInfo"
+    table="or_trip_info"
+    schema="public"
+    optimistic-lock="version"
+>
+
+    <composite-id
+		name="id"
+        class="com.claystone.db.OrTripInfoId"
+    >		
+	        <key-property name="tripId" type="int">
+<column name="trip_id" />
+	        </key-property>
+	        <key-property name="companyId" type="int">
+<column name="company_id" />
+	        </key-property>
+    </composite-id>	
+
+
+
+
+    <property
+        name="createdBy"
+	    type="string"
+    >
+<column name="created_by" length="20" not-null="true" />
+  </property>
+
+    <property
+        name="createdTime"
+	    type="timestamp"
+    >
+<column name="created_time" length="29" not-null="true" />
+  </property>
+
+    <property
+        name="vehicleId"
+	    type="int"
+    >
+<column name="vehicle_id" not-null="true" />
+  </property>
+
+    <property
+        name="tripStatus"
+	    type="short"
+    >
+<column name="trip_status" not-null="true" />
+  </property>
+
+    <property
+        name="tripAutoTrack"
+	    type="boolean"
+    >
+<column name="trip_auto_track" not-null="true" />
+  </property>
+
+    <property
+        name="tripStartTime"
+	    type="timestamp"
+    >
+<column name="trip_start_time" length="29" not-null="true" />
+  </property>
+
+    <property
+        name="tripEndTime"
+	    type="timestamp"
+    >
+<column name="trip_end_time" length="29" not-null="true" />
+  </property>
+
+    <property
+        name="tripDistancePlanned"
+	    type="int"
+    >
+<column name="trip_distance_planned" not-null="true" />
+  </property>
+
+    <property
+        name="tripDistanceActual"
+	    type="int"
+    >
+<column name="trip_distance_actual" not-null="true" />
+  </property>
+
+    <property
+        name="recordStatus"
+	    type="short"
+    >
+<column name="record_status" not-null="true" />
+  </property>
+
+    <property
+        name="lastModifiedTime"
+	    type="timestamp"
+    >
+<column name="last_modified_time" length="29" not-null="true" />
+  </property>
+
+    <property
+        name="lastModifiedUser"
+	    type="string"
+    >
+<column name="last_modified_user" length="20" not-null="true" />
+  </property>
+
+    <property
+        name="tripOnwardReturnFlag"
+	    type="short"
+    >
+<column name="trip_onward_return_flag" not-null="true" />
+  </property>
+
+    <property
+        name="routeCode"
+	    type="string"
+    >
+<column name="route_code" />
+  </property>
+
+    <property
+        name="bayNumber"
+	    type="string"
+    >
+<column name="bay_number" />
+  </property>
+
+    <property
+        name="tripDocumentNo"
+	    type="string"
+    >
+<column name="trip_document_no" />
+  </property>
+
+    <property
+        name="processedFlag"
+	    type="java.lang.Boolean"
+    >
+<column name="processed_flag" />
+  </property>
+
+    <property
+        name="tripTypeFlag"
+	    type="string"
+    >
+<column name="trip_type_flag" />
+  </property>
+
+    <property
+        name="actualTripStartTime"
+	    type="timestamp"
+    >
+<column name="actual_trip_start_time" length="29" />
+  </property>
+
+    <property
+        name="manualStartTime"
+	    type="timestamp"
+    >
+<column name="manual_start_time" length="29" />
+  </property>
+
+    <property
+        name="manualEndTime"
+	    type="timestamp"
+    >
+<column name="manual_end_time" length="29" />
+  </property>
+
+    <property
+        name="manualTripStatus"
+	    type="java.lang.Integer"
+    >
+<column name="manual_trip_status" />
+  </property>
+
+    <property
+        name="manualStartLatitude"
+	    type="java.lang.Integer"
+    >
+<column name="manual_start_latitude" />
+  </property>
+
+    <property
+        name="manualStartLongitude"
+	    type="java.lang.Integer"
+    >
+<column name="manual_start_longitude" />
+  </property>
+
+    <property
+        name="manualEndLatitude"
+	    type="java.lang.Integer"
+    >
+<column name="manual_end_latitude" />
+  </property>
+
+    <property
+        name="manualEndLongitude"
+	    type="java.lang.Integer"
+    >
+<column name="manual_end_longitude" />
+  </property>
+<property
+        name="remarks"
+	    type="string"
+    >
+<column name="remarks" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11 Oct, 2017 2:05:59 PM by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.claystone.db.OrRoute" table="or_route" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="com.claystone.db.OrRouteId">
+            <key-property name="routeId" type="int">
+                <column name="route_id" />
+            </key-property>
+            <key-property name="companyId" type="int">
+                <column name="company_id" />
+            </key-property>
+            <key-property name="stationSequence" type="short">
+                <column name="station_sequence" />
+            </key-property>
+            <key-property name="stationId" type="int">
+                <column name="station_id" />
+            </key-property>
+            <key-property name="firstEffectiveDate" type="timestamp">
+                <column name="first_effective_date" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="routeName" type="string">
+            <column name="route_name" not-null="true" />
+        </property>
+        <property name="stationName" type="string">
+            <column name="station_name" not-null="true" />
+        </property>
+        <property name="stationType" type="string">
+            <column name="station_type" not-null="true" />
+        </property>
+        <property name="recordStatus" type="short">
+            <column name="record_status" not-null="true" />
+        </property>
+        <property name="lastEffectiveDate" type="timestamp">
+            <column name="last_effective_date" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="bayNumber" type="string">
+            <column name="bay_number" />
+        </property>
+        <property name="distance" type="int">
+            <column name="distance" not-null="true" />
+        </property>
+        <property name="workgroupId" type="int">
+            <column name="workgroup_id" not-null="true" />
+        </property>
+        <property name="shipmentId" type="string">
+            <column name="shipment_id" />
+        </property>
+        <property name="arrivalDate" type="date">
+            <column name="arrival_date" length="13" />
+        </property>
+        <property name="routeStatus" type="java.lang.Integer">
+            <column name="route_status" />
+        </property>
+        <property name="routeType" type="string">
+            <column name="route_type" />
+        </property>
+         <property name="alertEmailId" type="string">
+            <column name="alert_email_id" />
+        </property>
+        <property name="alertMobileNo" type="string">
+            <column name="alert_mobile_no" />
+        </property>
+    </class>
+</hibernate-mapping>

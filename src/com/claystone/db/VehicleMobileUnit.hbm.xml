@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 Jun, 2010 12:56:16 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.VehicleMobileUnit" table="vehicle_mobile_unit" schema="public">
+        <composite-id name="id" class="com.claystone.db.VehicleMobileUnitId">
+            <key-property name="mobileunitid" type="string">
+                <column name="mobileunitid" length="20" />
+            </key-property>
+            <key-property name="vehicleId" type="int">
+                <column name="vehicle_id" />
+            </key-property>
+            <key-property name="firstEffectiveDate" type="timestamp">
+                <column name="first_effective_date" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="lastEffectiveDate" type="timestamp">
+            <column name="last_effective_date" length="29" not-null="true" />
+        </property>
+        <property name="companyId" type="int">
+            <column name="company_id" not-null="true" />
+        </property>
+        <property name="input1" type="string">
+            <column name="input1" length="20" />
+        </property>
+        <property name="input2" type="string">
+            <column name="input2" length="20" />
+        </property>
+        <property name="input3" type="string">
+            <column name="input3" length="20" />
+        </property>
+        <property name="input4" type="string">
+            <column name="input4" length="20" />
+        </property>
+        <property name="adc1" type="string">
+            <column name="adc1" length="20" />
+        </property>
+        <property name="adc2" type="string">
+            <column name="adc2" length="20" />
+        </property>
+        <property name="adc1Class" type="string">
+            <column name="adc1_class" length="20" />
+        </property>
+        <property name="adc2Class" type="string">
+            <column name="adc2_class" length="20" />
+        </property>
+        <property name="output1" type="string">
+            <column name="output1" length="20" />
+        </property>
+        <property name="output2" type="string">
+            <column name="output2" length="20" />
+        </property>
+        <property name="output3" type="string">
+            <column name="output3" length="20" />
+        </property>
+        <property name="output4" type="string">
+            <column name="output4" length="20" />
+        </property>
+        <property name="speedLimit" type="short">
+            <column name="speed_limit" not-null="true" />
+        </property>
+        <property name="idleTime" type="short">
+            <column name="idle_time" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="distanceEventMeter" type="int">
+            <column name="distance_event_meter" not-null="true" />
+        </property>
+        <property name="adc1Enabled" type="boolean">
+            <column name="adc1_enabled" not-null="true" />
+        </property>
+        <property name="adc2Enabled" type="boolean">
+            <column name="adc2_enabled" not-null="true" />
+        </property>
+        <property name="adc1Ref1" type="java.lang.Double">
+            <column name="adc1_ref1" precision="17" scale="17">
+                <comment>user for analog port calcultion</comment>
+            </column>
+        </property>
+        <property name="adc1Ref2" type="java.lang.Double">
+            <column name="adc1_ref2" precision="17" scale="17">
+                <comment>user for analog port calcultion</comment>
+            </column>
+        </property>
+        <property name="adc1Ref3" type="java.lang.Double">
+            <column name="adc1_ref3" precision="17" scale="17">
+                <comment>user for analog port calcultion</comment>
+            </column>
+        </property>
+        <property name="adc2Ref1" type="java.lang.Double">
+            <column name="adc2_ref1" precision="17" scale="17">
+                <comment>user for analog port calcultion</comment>
+            </column>
+        </property>
+        <property name="adc2Ref2" type="java.lang.Double">
+            <column name="adc2_ref2" precision="17" scale="17">
+                <comment>user for analog port calcultion</comment>
+            </column>
+        </property>
+        <property name="adc2Ref3" type="java.lang.Double">
+            <column name="adc2_ref3" precision="17" scale="17">
+                <comment>user for analog port calcultion</comment>
+            </column>
+        </property>
+        <property name="adc1Limit" type="java.lang.Short">
+            <column name="adc1_limit" />
+        </property>
+        <property name="adc2Limit" type="java.lang.Short">
+            <column name="adc2_limit" />
+        </property>
+         <property name="isActive" type="boolean">
+            <column name="is_active" />
+        </property>
+    </class>
+</hibernate-mapping>

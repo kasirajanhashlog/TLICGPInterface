@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-Sep-2010 16:06:01 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.Users" table="users" schema="public">
+        <id name="userId" type="int">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="companyId" type="int">
+            <column name="company_id" not-null="true" />
+        </property>
+        <property name="userLevel" type="short">
+            <column name="user_level" not-null="true">
+                <comment>Can be used to enable/disable features based on this flag in future</comment>
+            </column>
+        </property>
+        <property name="userLoginName" type="string">
+            <column name="user_login_name" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="user_password" length="20" not-null="true" />
+        </property>
+        <property name="lastLoginTime" type="timestamp">
+            <column name="last_login_time" length="29" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="recordStatus" type="int">
+            <column name="record_status" not-null="true" />
+        </property>
+        <property name="timezone" type="string">
+            <column name="timezone" length="25" not-null="true" />
+        </property>
+        <property name="countryCode" type="string">
+            <column name="country_code"  not-null="true" />
+        </property>
+        <property name="mobileNumber" type="string">
+            <column name="mobile_number"  />
+        </property>
+          <property name="emailId" type="string">
+            <column name="email_id"  />
+        </property>
+    </class>
+</hibernate-mapping>

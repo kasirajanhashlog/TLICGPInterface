@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated May 14, 2019 10:32:37 AM by Hibernate Tools 5.3.6.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.claystone.db.OrTripStationsNew" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="or_trip_stations_new">
+        <composite-id class="com.claystone.db.OrTripStationsNewId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="tripId" type="int">
+                <column name="trip_id"/>
+            </key-property>
+            <key-property name="companyId" type="int">
+                <column name="company_id"/>
+            </key-property>
+            <key-property name="stationSequence" type="short">
+                <column name="station_sequence"/>
+            </key-property>
+            <key-property name="stationId" type="int">
+                <column name="station_id"/>
+            </key-property>
+        </composite-id>
+        <property generated="never" lazy="false" name="stationType" optimistic-lock="true" type="string" unique="false">
+            <column name="station_type" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="tripReceiverId" optimistic-lock="true" type="int" unique="false">
+            <column name="trip_receiver_id" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="definedArrivalTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="defined_arrival_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="definedDeptTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="defined_dept_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="definedStoppageTime" optimistic-lock="true" type="short" unique="false">
+            <column name="defined_stoppage_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="actualArrivalTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="actual_arrival_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="actualDeptTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="actual_dept_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="actualStoppageTime" optimistic-lock="true" type="short" unique="false">
+            <column name="actual_stoppage_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="vehiclePosition" optimistic-lock="true" type="short" unique="false">
+            <column name="vehicle_position" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="recordStatus" optimistic-lock="true" type="short" unique="false">
+            <column name="record_status" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="lastModifiedTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="last_modified_time" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="lastModifiedUser" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="last_modified_user" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="manualIn" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="manual_in"/>
+        </property>
+        <property generated="never" lazy="false" name="manualOut" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="manual_out"/>
+        </property>
+        <property generated="never" lazy="false" name="manualStoppageTime" optimistic-lock="true" type="java.lang.Short" unique="false">
+            <column name="manual_stoppage_time"/>
+        </property>
+        <property generated="never" lazy="false" name="manualVehiclePosition" optimistic-lock="true" type="java.lang.Short" unique="false">
+            <column name="manual_vehicle_position"/>
+        </property>
+        <property generated="never" lazy="false" name="manualInLatitude" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="manual_in_latitude"/>
+        </property>
+        <property generated="never" lazy="false" name="manualInLongitude" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="manual_in_longitude"/>
+        </property>
+        <property generated="never" lazy="false" name="manualOutLatitude" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="manual_out_latitude"/>
+        </property>
+        <property generated="never" lazy="false" name="manualOutLongitude" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="manual_out_longitude"/>
+        </property>
+        <property generated="never" lazy="false" name="manualEntryWarningSent" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="manual_entry_warning_sent"/>
+        </property>
+        <property generated="never" lazy="false" name="manualEntryOverrideFlag" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="manual_entry_override_flag"/>
+        </property>
+        <property generated="never" lazy="false" name="radius" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="radius"/>
+        </property>
+        <property generated="never" lazy="false" name="insideRadius" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="inside_radius"/>
+        </property>
+        <property generated="never" lazy="false" name="podflag" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="podflag"/>
+        </property>
+        <property generated="never" lazy="false" name="contactName" optimistic-lock="true" type="string" unique="false">
+            <column name="contact_name"/>
+        </property>
+        <property generated="never" lazy="false" name="emailId" optimistic-lock="true" type="string" unique="false">
+            <column name="email_id"/>
+        </property>
+        <property generated="never" lazy="false" name="countryCode" optimistic-lock="true" type="string" unique="false">
+            <column name="country_code"/>
+        </property>
+        <property generated="never" lazy="false" name="contactNumber" optimistic-lock="true" type="string" unique="false">
+            <column name="contact_number"/>
+        </property>
+         <property generated="never" lazy="false" name="manualExitWarningSent" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="manual_exit_warning_sent"/>
+        </property>
+        <property generated="never" lazy="false" name="manualExitOverrideFlag" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="manual_exit_override_flag"/>
+        </property>
+        <property name="skipReason" type="string">
+            <column name="skip_reason" />
+        </property>
+    </class>
+</hibernate-mapping>

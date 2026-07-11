@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+  <!-- A time/date based rolling appender -->
+  <appender name="FILE" class="org.jboss.logging.appender.DailyRollingFileAppender">
+    <param name="File" value="./timeout.log"/>
+    <param name="Append" value="true"/>
+    <param name="Threshold" value="ERROR"/>
+
+	<param name="Encoding" value="UTF-8"/>
+
+    <!-- Rollover at midnight each day -->
+    <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+
+    <layout class="org.apache.log4j.PatternLayout">
+      <!-- The default pattern: Date Priority [Category] Message\n -->
+      <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+
+      <!-- The full pattern: Date MS Priority [Category] (Thread:NDC) Message\n
+      <param name="ConversionPattern" value="%d %-5r %-5p [%c] (%t:%x) %m%n"/>
+       -->
+    </layout>	    
+  </appender>
+
+  <!-- ======================= -->
+  <!-- Setup the Root category -->
+  <!-- ======================= -->
+
+  <root>
+    <appender-ref ref="FILE"/>
+  </root>
+
+</log4j:configuration>

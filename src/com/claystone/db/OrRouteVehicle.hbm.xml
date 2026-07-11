@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Oct, 2017 10:45:38 AM by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.claystone.db.OrRouteVehicle" table="or_route_vehicle" schema="public" optimistic-lock="version">
+        <composite-id name="id" class="com.claystone.db.OrRouteVehicleId">
+            <key-property name="vehicleId" type="int">
+                <column name="vehicle_id" />
+            </key-property>
+            <key-property name="companyId" type="int">
+                <column name="company_id" />
+            </key-property>
+            <key-property name="routeId" type="int">
+                <column name="route_id" />
+            </key-property>
+            <key-property name="firstEffectiveDate" type="timestamp">
+                <column name="first_effective_date" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="licensePlate" type="string">
+            <column name="license_plate" length="20" not-null="true" />
+        </property>
+        <property name="lastEffectiveDate" type="timestamp">
+            <column name="last_effective_date" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="tripDocumentNo" type="string">
+            <column name="trip_document_no" />
+        </property>
+        <property name="timingTripId" type="java.lang.Integer">
+            <column name="timing_trip_id" />
+        </property>
+        <property name="priority" type="java.lang.Integer">
+            <column name="priority" />
+        </property>
+        <property name="currentStatus" type="java.lang.Integer">
+            <column name="current_status" />
+        </property>
+    </class>
+</hibernate-mapping>

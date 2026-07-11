@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 17, 2020 5:17:49 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.claystone.db.GpsApiPolling" table="gps_api_polling" schema="public">
+        <composite-id name="id" class="com.claystone.db.GpsApiPollingId">
+            <key-property name="companyId" type="int">
+                <column name="company_id" />
+            </key-property>
+            <key-property name="mobileunitid" type="string">
+                <column name="mobileunitid" />
+            </key-property>
+            <key-property name="searchKey" type="string">
+                <column name="search_key" />
+            </key-property>
+            <key-property name="dataProviderName" type="string">
+                <column name="data_provider_name" />
+            </key-property>
+        </composite-id>
+        <property name="apiUrl" type="string">
+            <column name="api_url" not-null="true" />
+        </property>
+        <property name="apiReqMethod" type="string">
+            <column name="api_req_method" not-null="true" />
+        </property>
+        <property name="apiReqParams" type="string">
+            <column name="api_req_params" not-null="true" />
+        </property>
+        <property name="apiResType" type="string">
+            <column name="api_res_type" not-null="true" />
+        </property>
+        <property name="dataInterval" type="int">
+            <column name="data_interval" not-null="true" />
+        </property>
+        <property name="isUnitActive" type="boolean">
+            <column name="is_unit_active" not-null="true" />
+        </property>
+        <property name="lastResponseCode" type="int">
+            <column name="last_response_code" not-null="true" />
+        </property>
+        <property name="lastDataCount" type="int">
+            <column name="last_data_count" not-null="true" />
+        </property>
+        <property name="lastProcessedTime" type="timestamp">
+            <column name="last_processed_time" length="29" not-null="true" />
+        </property>
+        <property name="lastResponseTime" type="timestamp">
+            <column name="last_response_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="licensePlate" type="string">
+           <!--  <column name="license_plate" not-null="true" /> -->
+            <column name="license_plate" />
+        </property>
+        <property name="transporterName" type="string">
+            <column name="transporter_name" not-null="true" />
+        </property>
+        <property name="lastGpsdateTime" type="timestamp">
+            <column name="last_gpsdate_time" length="29" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

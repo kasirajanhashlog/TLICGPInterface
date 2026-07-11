@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28 Oct, 2021 10:58:23 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.claystone.db.Vehicle" table="vehicle" schema="public">
+        <comment>Details of vehicles and association with company</comment>
+        <composite-id name="id" class="com.claystone.db.VehicleId">
+            <key-property name="vehicleId" type="int">
+                <column name="vehicle_id" />
+            </key-property>
+            <key-property name="companyId" type="int">
+                <column name="company_id" />
+            </key-property>
+        </composite-id>
+        <property name="licensePlate" type="string">
+            <column name="license_plate" length="20" not-null="true" />
+        </property>
+        <property name="vehicleBrand" type="string">
+            <column name="vehicle_brand" length="30" />
+        </property>
+        <property name="vehicleColour" type="string">
+            <column name="vehicle_colour" length="20" />
+        </property>
+        <property name="vehicleModel" type="string">
+            <column name="vehicle_model" length="20" />
+        </property>
+        <property name="vehicleChassisNo" type="string">
+            <column name="vehicle_chassis_no" length="30" />
+        </property>
+        <property name="vehicleOilTankSize" type="java.lang.Integer">
+            <column name="vehicle_oil_tank_size" />
+        </property>
+        <property name="vehicleBattNormal" type="short">
+            <column name="vehicle_batt_normal" not-null="true">
+                <comment>Normal batt value in Volts when engine not started</comment>
+            </column>
+        </property>
+        <property name="vehicleBattStarted" type="short">
+            <column name="vehicle_batt_started" not-null="true">
+                <comment>Approx batt voltage after engine started</comment>
+            </column>
+        </property>
+        <property name="vehicleImageUrl" type="string">
+            <column name="vehicle_image_url" length="50" />
+        </property>
+        <property name="vehicleStatus" type="char">
+            <column name="vehicle_status" length="1" not-null="true">
+                <comment>Status of the vehicle : 'A' Active, 'S' Suspended 'D' Deleted</comment>
+            </column>
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+        <property name="recordStatus" type="short">
+            <column name="record_status" not-null="true">
+                <comment>Status of the record : 0 - Active 1 - Deleted</comment>
+            </column>
+        </property>
+        <property name="alertEmailId" type="string">
+            <column name="alert_email_id" />
+        </property>
+        <property name="alertMobileNo" type="string">
+            <column name="alert_mobile_no" />
+        </property>
+        <property name="transporterName" type="string">
+            <column name="transporter_name" />
+        </property>
+        <property name="smsLimit" type="java.lang.Short">
+            <column name="sms_limit" />
+        </property>
+        <property name="vehicleTypeImage" type="string">
+            <column name="vehicle_type_image" />
+        </property>
+        <property name="vehicleNativeName" type="string">
+            <column name="vehicle_native_name" />
+        </property>
+    </class>
+</hibernate-mapping>

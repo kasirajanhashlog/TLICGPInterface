@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 28, 2020 4:45:31 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.claystone.db.DataProvider" table="data_provider"
+		schema="public">
+		<composite-id name="id"
+			class="com.claystone.db.DataProviderId">
+			<key-property name="dataProviderId" type="int">
+				<column name="data_provider_id" />
+			</key-property>
+			<key-property name="dataProviderName" type="string">
+				<column name="data_provider_name" />
+			</key-property>
+		</composite-id>
+		<property name="companyId" type="int">
+			<column name="company_id" not-null="true" />
+		</property>
+		<property name="tokenUrl" type="string">
+			<column name="token_url" not-null="true" />
+		</property>
+		<property name="apiUrl" type="string">
+			<column name="api_url" not-null="true" />
+		</property>
+		<property name="tokenReqParams" type="string">
+			<column name="token_req_params" not-null="true" />
+		</property>
+		<property name="apiReqParams" type="string">
+			<column name="api_req_params" not-null="true" />
+		</property>
+		<property name="tokenReqMethod" type="string">
+			<column name="token_req_method" not-null="true" />
+		</property>
+		<property name="apiReqMethod" type="string">
+			<column name="api_req_method" not-null="true" />
+		</property>
+		<property name="tokenResType" type="string">
+			<column name="token_res_type" not-null="true" />
+		</property>
+		<property name="apiResType" type="string">
+			<column name="api_res_type" not-null="true" />
+		</property>
+		<property name="dataInterval" type="int">
+			<column name="data_interval" not-null="true" />
+		</property>
+		<property name="recordStatus" type="int">
+			<column name="record_status" not-null="true" />
+		</property>
+		<property name="lastModifiedUser" type="int">
+			<column name="last_modified_user" not-null="true" />
+		</property>
+		<property name="lasModifiedTime" type="timestamp">
+			<column name="las_modified_time" length="29" not-null="true" />
+		</property>
+		<property name="unitPrefix" type="string">
+			<column name="unit_prefix" length="5" not-null="true" />
+		</property>
+		<property name="unitSeq" type="int">
+			<column name="unit_seq" not-null="true" />
+		</property>
+		<property name="searchKey" type="string">
+			<column name="search_key" />
+		</property>
+		<property name="isTokenEnable" type="boolean">
+			<column name="is_token_enable" />
+		</property>
+		<property name="nextProcessedTime" type="timestamp">
+			<column name="next_processed_time" length="29" />
+		</property>
+	</class>
+</hibernate-mapping>

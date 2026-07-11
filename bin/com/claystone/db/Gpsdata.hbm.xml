@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Aug, 2011 1:22:26 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.Gpsdata" table="gpsdata" schema="public">
+        <composite-id name="id" class="com.claystone.db.GpsdataId">
+            <key-property name="mobileunitid" type="string">
+                <column name="mobileunitid" length="20" />
+            </key-property>
+            <key-property name="gpsdate" type="timestamp">
+                <column name="gpsdate" length="29" />
+            </key-property>
+            <key-property name="gprsdate" type="timestamp">
+                <column name="gprsdate" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="gpsstatus" type="boolean">
+            <column name="gpsstatus" not-null="true">
+                <comment>GPS Status :&#226;&#128;&#152;A&#226;&#128;&#153; : fix, &#226;&#128;&#152;N&#226;&#128;&#153; : Not fix'</comment>
+            </column>
+        </property>
+        <property name="latitude" type="int">
+            <column name="latitude" not-null="true">
+                <comment>Current Latitude ex: 12.12345 Degree</comment>
+            </column>
+        </property>
+        <property name="longitude" type="int">
+            <column name="longitude" not-null="true">
+                <comment>Current longitude of the mobile unit: ex 123.12345 Degree</comment>
+            </column>
+        </property>
+        <property name="speed" type="short">
+            <column name="speed" not-null="true">
+                <comment>Current speed of the unit</comment>
+            </column>
+        </property>
+        <property name="direction" type="short">
+            <column name="direction" not-null="true">
+                <comment>Travel direction 000 ~ 359</comment>
+            </column>
+        </property>
+        <property name="acc" type="boolean">
+            <column name="acc" not-null="true">
+                <comment>ACC -- The engine start/stop staus.It's on when you turn the ignition switch. But deos not mean engine is running. To determine engine start/stop status,
+                this has to be combined with batt voltage.</comment>
+            </column>
+        </property>
+        <property name="in1" type="boolean">
+            <column name="in1" not-null="true">
+                <comment>Input port1 status. In1, In2 , in3 and in4 can be configured to monitor status of any device for on or off. Ex: doors, tail gate etc</comment>
+            </column>
+        </property>
+        <property name="in2" type="boolean">
+            <column name="in2" not-null="true">
+                <comment>Input port 2 status</comment>
+            </column>
+        </property>
+        <property name="in3" type="boolean">
+            <column name="in3" not-null="true">
+                <comment>Input port 3 status</comment>
+            </column>
+        </property>
+        <property name="in4" type="boolean">
+            <column name="in4" not-null="true">
+                <comment>Input port 4 status</comment>
+            </column>
+        </property>
+        <property name="out1" type="boolean">
+            <column name="out1" not-null="true">
+                <comment>With out1 &amp; out2 ports, 2 devices can be control through GPRS/SMS commands from application. ex: turn off the fuel pump to stop the car</comment>
+            </column>
+        </property>
+        <property name="out2" type="boolean">
+            <column name="out2" not-null="true">
+                <comment>With out1 &amp; out2 ports, 2 devices can be control through GPRS/SMS commands from application. ex: turn off the fuel pump to stop the car</comment>
+            </column>
+        </property>
+        <property name="eventcode" type="java.lang.Short">
+            <column name="eventcode">
+                <comment>Event Code 0 None 1 ACC status is ON 2 ACC status is OFF 3 Input port status changed 4 Emergency 5 Main power disconnect 6 Case open 7 Over speed 8 Server
+                command execute success (GPRS or SMS) 9 Server command execute failure (GPRS or SMS) 10 Distance exceed 11 Geo-fence detected</comment>
+            </column>
+        </property>
+        <property name="adc1" type="java.lang.Short">
+            <column name="adc1">
+                <comment>Analog input from unit in Voltage like a normal volt meter. Value 0 - 30V (123 -&gt; 12.3 Vol) Ex: It can be connected to fuel level sensor to read the
+                level of the fuel. Value is in Volt. So it needs to be converted to graph with some calibration. Because each car have different shape and caracteristic of the
+                voltage differentiation. Also it can be connected to measure the temperature of refrigerated trucks.</comment>
+            </column>
+        </property>
+        <property name="adc2" type="java.lang.Short">
+            <column name="adc2">
+                <comment>0~30Volt, 123 -&gt; 12.3 Volt</comment>
+            </column>
+        </property>
+        <property name="batt" type="java.lang.Short">
+            <column name="batt">
+                <comment>BATTERY VOLT. Car battery (unit power input) voltage value, Divide by 10, 144-&gt;14.4 Volt For normal car, engine off voltage is around 12.5. Engine on
+                is more than 13.8 V. Please note this value is different for different types of vehicles</comment>
+            </column>
+        </property>
+        <property name="reserve" type="string">
+            <column name="reserve" length="2">
+                <comment>Reserved field</comment>
+            </column>
+        </property>
+        <property name="processedFlag" type="boolean">
+            <column name="processed_flag" not-null="true" />
+        </property>
+        <property name="mileage" type="int">
+            <column name="mileage" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

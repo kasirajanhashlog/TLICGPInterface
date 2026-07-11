@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 Jan, 2011 1:40:32 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.claystone.db.OrWorkgroupVehicle" table="or_workgroup_vehicle" schema="public">
+        <composite-id name="id" class="com.claystone.db.OrWorkgroupVehicleId">
+            <key-property name="workgroupId" type="int">
+                <column name="workgroup_id" />
+            </key-property>
+            <key-property name="groupOwnerId" type="int">
+                <column name="group_owner_id" />
+            </key-property>
+            <key-property name="vehicleId" type="int">
+                <column name="vehicle_id" />
+            </key-property>
+            <key-property name="vehicleCompanyId" type="int">
+                <column name="vehicle_company_id" />
+            </key-property>
+            <key-property name="firstEffectiveDate" type="timestamp">
+                <column name="first_effective_date" length="29" />
+            </key-property>
+        </composite-id>
+        <property name="lastEffectiveDate" type="timestamp">
+            <column name="last_effective_date" length="29" not-null="true" />
+        </property>
+        <property name="recordStatus" type="short">
+            <column name="record_status" not-null="true" />
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="29" not-null="true" />
+        </property>
+        <property name="lastModifiedUser" type="string">
+            <column name="last_modified_user" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
