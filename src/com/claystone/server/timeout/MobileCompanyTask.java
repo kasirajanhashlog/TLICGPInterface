@@ -131,7 +131,8 @@ public class MobileCompanyTask extends TimerTask {
 								mobileCompanyTimestamp.getDataProviderName());
 					} 
 					else if (mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("VAMOSYS")
-							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("VAMOSYSTRL")) {
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("VAMOSYSTRL")
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("VAMOSYS-OEM")) {
 						JsonMethodAPI apiRes = new JsonMethodAPI();
 						url = url + mobileCompanyTimestamp.getApiReqParams();
 						HashMap<String, String> columnList = new HashMap<String, String>();
@@ -685,7 +686,7 @@ public class MobileCompanyTask extends TimerTask {
 
 						List<?> mobileUnitList = null;
 						Session session = HibernateUtil.beginTransaction();
-						
+//						System.out.println("LicensePlate: "+licensePlate);
 						if(licensePlate!=null && !licensePlate.equals("")) {
 							mobileUnitList = session.createSQLQuery(
 									" select vmu.mobileunitid ,v.transporter_name from vehicle_mobile_unit vmu,"
