@@ -730,7 +730,8 @@ public class MobileUnitTask extends TimerTask {
 					mUnitTimestampHash.put(mobileunitId, mobileUnitTimestamp);
 
 					JsonMethodAPI lGPSAPIPolling = new JsonMethodAPI();
-					lGPSAPIPolling.InsertGPSAPIPolling(mobileUnitTimestamp, dataList);
+					//The following function is commented due to performance issue on 27JUL2026
+					// lGPSAPIPolling.InsertGPSAPIPolling(mobileUnitTimestamp, dataList);
 
 
 			}

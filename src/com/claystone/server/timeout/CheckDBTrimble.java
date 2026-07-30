@@ -44,6 +44,7 @@ import org.apache.commons.httpclient.SimpleHttpConnectionManager;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
+import org.jboss.util.id.ID;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.w3c.dom.Document;
@@ -52,6 +53,8 @@ import org.xml.sax.InputSource;
 import com.claystone.common.utils.CommonConstants;
 import com.claystone.db.GpsApiPolling;
 import com.claystone.db.GpsApiPollingId;
+import com.claystone.server.timeout.CheckDBTrimble.TrimbleDataModel;
+import com.claystone.server.timeout.CheckDBTrimble.TrimbleRemoveDataModel;
 import com.claystone.server.util.HibernateUtil;
 import com.google.gson.Gson;
 
@@ -318,7 +321,8 @@ public class CheckDBTrimble extends TimerTask{
 							while(unitTrimbleTimestampIter.hasNext()){
 								MobileUnitTimestamp unitTimestamp = unitTrimbleTimestampIter.next();
 								if(unitTimestamp.getLicensePlate().equals(vehicleNo)) {
-									InsertGPSAPIPolling(unitTimestamp, statusInt, true);
+									//The following function is commented due to performance issue on 27JUL2026
+									// InsertGPSAPIPolling(unitTimestamp, statusInt, true);
 									log.info("Complete Start Trimble Processing for Unit: " + unitTimestamp.getMobileUnitId() );
 									break;
 								}
@@ -333,7 +337,8 @@ public class CheckDBTrimble extends TimerTask{
 						while(unitTrimbleTimestampIter.hasNext()){
 							MobileUnitTimestamp unitTimestamp = unitTrimbleTimestampIter.next();
 							if(unitTimestamp.getLicensePlate().equals(str[w])) {
-								InsertGPSAPIPolling(unitTimestamp, -2, true);
+								//The following function is commented due to performance issue on 27JUL2026
+								// InsertGPSAPIPolling(unitTimestamp, -2, true);
 								break;
 							}
 						}
@@ -375,7 +380,8 @@ public class CheckDBTrimble extends TimerTask{
 								while(unitTrimbleTimestampIter.hasNext()){
 									MobileUnitTimestamp unitTimestamp = unitTrimbleTimestampIter.next();
 									if(unitTimestamp.getLicensePlate().equals(vehicleNo)) {
-										InsertGPSAPIPolling(unitTimestamp, statusInt, false);
+										//The following function is commented due to performance issue on 27JUL2026
+										// InsertGPSAPIPolling(unitTimestamp, statusInt, false);
 										mUnitTrimbleTimestampHash.remove(unitTimestamp.getMobileUnitId());
 										if(vehicleNumber.equals(""))
 											vehicleNumber = vehicleNo;

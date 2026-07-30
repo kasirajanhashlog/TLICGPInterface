@@ -45,6 +45,7 @@ import org.json.JSONObject;
 
 import com.claystone.common.utils.CommonConstants;
 import com.claystone.db.Gpsdata;
+import com.claystone.server.timeout.KapoorDieselsGetData.DefaultTrustManager;
 //import com.claystone.server.timeout.JsonMethodAPI.DefaultTrustManager;
 import com.claystone.server.util.HibernateUtil;
 
@@ -241,7 +242,8 @@ public class CheckDBFastTag extends TimerTask
 							}
 						}
 						JsonMethodAPI lGPSAPIPolling = new JsonMethodAPI();
-						lGPSAPIPolling.InsertGPSAPIPolling_FastTag(unitTimestamp, dataList);
+						//The following function is commented due to performance issue on 27JUL2026
+						// lGPSAPIPolling.InsertGPSAPIPolling_FastTag(unitTimestamp, dataList);
 					}
 
 					row++;

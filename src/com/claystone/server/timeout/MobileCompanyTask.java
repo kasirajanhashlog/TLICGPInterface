@@ -338,7 +338,9 @@ public class MobileCompanyTask extends TimerTask {
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK-JPL-1233")
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK8884")
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK2867")
-							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOKLEYL-SKT")) {
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOKLEYL-SKT")
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_VIKASH")
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_SRTRANS")) {
 						AshokLeylandGetData apiRes = new AshokLeylandGetData();
 						url = url + mobileCompanyTimestamp.getApiReqParams();
 						HashMap<String, String> columnList = new HashMap<String, String>();
@@ -592,7 +594,9 @@ public class MobileCompanyTask extends TimerTask {
 							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-MH12YB46")
 							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER_SUMER")
 							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-SST")
-							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-4059")) {
+							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-4059")
+							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER_DEV")
+							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER_GLARE")) {
 						EICHER_GetData apiRes = new EICHER_GetData();
 						String tokenURL = mobileCompanyTimestamp.getTokenUrl();
 						String tokenReqParams = mobileCompanyTimestamp.getTokenReqParams();
@@ -742,8 +746,9 @@ public class MobileCompanyTask extends TimerTask {
 								mobileCompanyTimestamp.setLastResponseCode(0);
 								mobileCompanyTimestamp.setLastResponseTime(new Date());
 								JsonMethodAPI lGPSAPIPolling = new JsonMethodAPI();
-								lGPSAPIPolling.InsertGPSAPIPollingCompany(mobileCompanyTimestamp, model, unitId,
-										transCode);
+								//The following function is commented due to performance issue on 27JUL2026
+								// lGPSAPIPolling.InsertGPSAPIPollingCompany(mobileCompanyTimestamp, model, unitId,
+								// 		transCode);
 							}
 							HibernateUtil.commit();
 
@@ -755,7 +760,8 @@ public class MobileCompanyTask extends TimerTask {
 				} else {
 					mobileCompanyTimestamp.setLastProcessedTime(new Date());
 					JsonMethodAPI lGPSAPIPolling = new JsonMethodAPI();
-					lGPSAPIPolling.InsertGPSAPIPolling(mobileCompanyTimestamp, dataList);
+					//The following function is commented due to performance issue on 27JUL2026
+					// lGPSAPIPolling.InsertGPSAPIPolling(mobileCompanyTimestamp, dataList);
 				}
 				log.info("Thread :" + Thread.currentThread().getId() + "; After Insert Data : " + mobileCompanyId
 						+ " - " + mobileCompanyTimestamp.getDataProviderName() + " - " + dataList.size() + " ; "

@@ -304,7 +304,8 @@ public class CheckDBEFCON extends TimerTask{
 							while(unitEFCONTimestampIter.hasNext()){
 								MobileUnitTimestamp unitTimestamp = unitEFCONTimestampIter.next();
 								if(unitTimestamp.getLicensePlate().equals(vehicleNo)) {
-									InsertGPSAPIPolling(unitTimestamp, statusInt, true);
+									//The following function is commented due to performance issue on 27JUL2026
+									// InsertGPSAPIPolling(unitTimestamp, statusInt, true);
 									log.info("Complete Start Processing for Unit: " + unitTimestamp.getMobileUnitId() );
 									break;
 								}
@@ -318,7 +319,8 @@ public class CheckDBEFCON extends TimerTask{
 							while(unitEFCONTimestampIter.hasNext()){
 								MobileUnitTimestamp unitTimestamp = unitEFCONTimestampIter.next();
 								if(unitTimestamp.getLicensePlate().equals(str[w])) {
-									InsertGPSAPIPolling(unitTimestamp, -2, true);
+									//The following function is commented due to performance issue on 27JUL2026
+									// InsertGPSAPIPolling(unitTimestamp, -2, true);
 									break;
 								}
 							}
@@ -353,7 +355,8 @@ public class CheckDBEFCON extends TimerTask{
 									while(unitEFCONTimestampIter.hasNext()){
 										MobileUnitTimestamp unitTimestamp = unitEFCONTimestampIter.next();
 										if(unitTimestamp.getLicensePlate().equals(vehicleNo)) {
-											InsertGPSAPIPolling(unitTimestamp, statusInt, false);
+											//The following function is commented due to performance issue on 27JUL2026
+											// InsertGPSAPIPolling(unitTimestamp, statusInt, false);
 											mUnitEFCONTimestampHash.remove(unitTimestamp.getMobileUnitId());
 											log.info("Complete Stop Processing for Unit: " + unitTimestamp.getMobileUnitId() );
 											break;

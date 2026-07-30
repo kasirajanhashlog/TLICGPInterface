@@ -139,8 +139,9 @@ public class FleetRadarCompanyTask extends TimerTask {
 								mobileCompanyTimestamp.setLastResponseCode(0);
 								mobileCompanyTimestamp.setLastResponseTime(new Date());
 								JsonMethodAPI lGPSAPIPolling = new JsonMethodAPI();
-								lGPSAPIPolling.InsertGPSAPIPollingCompany(mobileCompanyTimestamp, model, unitId,
-										transCode);
+								//The following function is commented due to performance issue on 27JUL2026
+								// lGPSAPIPolling.InsertGPSAPIPollingCompany(mobileCompanyTimestamp, model, unitId,
+								// 		transCode);
 							}
 							HibernateUtil.commit();
 
@@ -152,7 +153,8 @@ public class FleetRadarCompanyTask extends TimerTask {
 				} else {
 					mobileCompanyTimestamp.setLastProcessedTime(new Date());
 					JsonMethodAPI lGPSAPIPolling = new JsonMethodAPI();
-					lGPSAPIPolling.InsertGPSAPIPolling(mobileCompanyTimestamp, dataList);
+					//The following function is commented due to performance issue on 27JUL2026
+					// lGPSAPIPolling.InsertGPSAPIPolling(mobileCompanyTimestamp, dataList);
 				}
 				log.info("Thread :" + Thread.currentThread().getId() + "; After Insert Data : " + mobileCompanyId
 						+ " - " + mobileCompanyTimestamp.getDataProviderName() + " - " + dataList.size() + " ; "
