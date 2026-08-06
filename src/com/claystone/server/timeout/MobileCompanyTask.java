@@ -280,7 +280,8 @@ public class MobileCompanyTask extends TimerTask {
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("TATAMOTOR-RAO")
 						    ||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("TATAMOTOR-SUB")
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("TATAMOTOR-AMIT")
-							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("TATAMOTOR8311")) {
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("TATAMOTOR8311")
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("TATAMOTOR_LAKMI")) {
 						TATAMotorAllVehiclesGetData apiRes = new TATAMotorAllVehiclesGetData();
 						String tokenURL = mobileCompanyTimestamp.getTokenUrl();
 						String clientID = mobileCompanyTimestamp.getTokenReqParams();
@@ -596,7 +597,8 @@ public class MobileCompanyTask extends TimerTask {
 							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-SST")
 							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-4059")
 							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER_DEV")
-							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER_GLARE")) {
+							|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER_GLARE")
+						|| mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EICHER-KSSRPL")) {
 						EICHER_GetData apiRes = new EICHER_GetData();
 						String tokenURL = mobileCompanyTimestamp.getTokenUrl();
 						String tokenReqParams = mobileCompanyTimestamp.getTokenReqParams();
