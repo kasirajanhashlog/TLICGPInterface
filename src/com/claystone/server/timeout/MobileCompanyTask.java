@@ -669,6 +669,19 @@ public class MobileCompanyTask extends TimerTask {
 						dataList = apiRes.GetDataFromTRACKNOV(url, mobileCompanyId, columnList, timeFormat,tokenURL,tokenReqParams,
 								apiUrl,apiReqParams,dataProviderId,dataProviderName,mobileCompanyTimestamp);
 						
+					}else if (mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("EGTRACKERS")) {
+						EGTRACKERS_GetData apiRes = new EGTRACKERS_GetData();
+						HashMap<String, String> columnList = new HashMap<String, String>();
+
+						columnList.put("licensePlate", "shortName");
+						columnList.put("date", "date");
+						columnList.put("latitude", "latitude");
+						columnList.put("longitude", "longitude");
+						columnList.put("speed", "speed");
+						String timeFormat = "SSS";
+					
+						dataList = apiRes.GetDataFromEGTRACKERS(url, mobileCompanyId, columnList, timeFormat,
+								mobileCompanyTimestamp.getDataProviderName());
 					}
 				}
 				if (dataList == null) {
