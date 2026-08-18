@@ -343,7 +343,8 @@ public class MobileCompanyTask extends TimerTask {
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_VIKASH")
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_SRTRANS")
 							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK-RK-0840")
-							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_STLL")) {
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_STLL")
+							||mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("ASHOK_TVSAV")) {
 						AshokLeylandGetData apiRes = new AshokLeylandGetData();
 						url = url + mobileCompanyTimestamp.getApiReqParams();
 						HashMap<String, String> columnList = new HashMap<String, String>();
