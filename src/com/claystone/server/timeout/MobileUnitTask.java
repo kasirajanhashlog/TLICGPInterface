@@ -149,7 +149,9 @@ public class MobileUnitTask extends TimerTask {
 							|| mobileUnitTimestamp.getDataProviderName().equalsIgnoreCase("AXES-RLPL")
 							|| mobileUnitTimestamp.getDataProviderName().equalsIgnoreCase("AXES-PRBD")
 							|| mobileUnitTimestamp.getDataProviderName().equalsIgnoreCase("AXES-GXL")
-							|| mobileUnitTimestamp.getDataProviderName().equalsIgnoreCase("AXES-RKRL")) {
+							|| mobileUnitTimestamp.getDataProviderName().equalsIgnoreCase("AXES-RKRL")
+							|| mobileUnitTimestamp.getDataProviderName().equalsIgnoreCase("AXES-MAHA")) {
+						
 						String reqParam = mobileUnitTimestamp.getApiReqParams();
 						url = url + reqParam + mobileUnitTimestamp.getLicensePlate();
 						HashMap<String, String> columnList = new HashMap<String, String>();
