@@ -685,6 +685,19 @@ public class MobileCompanyTask extends TimerTask {
 					
 						dataList = apiRes.GetDataFromEGTRACKERS(url, mobileCompanyId, columnList, timeFormat,
 								mobileCompanyTimestamp.getDataProviderName());
+					}else if (mobileCompanyTimestamp.getDataProviderName().equalsIgnoreCase("COSMICA")) {
+						COSMICA_GetData apiRes = new COSMICA_GetData();
+						HashMap<String, String> columnList = new HashMap<String, String>();
+
+						columnList.put("licensePlate", "shortName");
+						columnList.put("date", "date");
+						columnList.put("latitude", "latitude");
+						columnList.put("longitude", "longitude");
+						columnList.put("speed", "speed");
+						String timeFormat = "SSS";
+					
+						dataList = apiRes.GetDataFromCOSMICA(url, mobileCompanyId, columnList, timeFormat,
+								mobileCompanyTimestamp.getDataProviderName());
 					}
 				}
 				if (dataList == null) {

@@ -60,8 +60,8 @@ public class CheckDBCompany extends TimerTask {
 		mCompanyTimestampHash = new Hashtable<String, MobileUnitTimestamp>(); 
 		companyIds = properties.getProperty("CompCompanyIds");
 		providerIds = properties.getProperty("CompProviderIds");
-//		companyIds = "495";
-//		providerIds = "387";
+//		companyIds = "491";
+//		providerIds = "395";
 		if(strtDate != null){
 			this.startDate = strtDate;
 		}

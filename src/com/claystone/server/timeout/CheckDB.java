@@ -61,8 +61,8 @@ public class CheckDB extends TimerTask
 		mUnitTimestampHash = new Hashtable<String, MobileUnitTimestamp>(); 
 		companyIds = properties.getProperty("UnitCompanyIds");
 		providerIds = properties.getProperty("UnitProviderIds");
-//		companyIds = "478";
-//		providerIds = "361";
+//		companyIds = "491";
+//		providerIds = "395";
 		if(strtDate != null){
 			this.startDate = strtDate;
 		}
